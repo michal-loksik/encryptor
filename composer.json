@@ -19,7 +19,9 @@
 		"nette/security": "^3.1",
 		"nette/utils": "^3.2",
 		"latte/latte": "^2.9",
-		"tracy/tracy": "^2.8"
+		"tracy/tracy": "^2.8",
+		"phpstan/phpstan": "^1.4",
+		"contributte/console": "^0.9.1"
 	},
 	"require-dev": {
 		"nette/tester": "^2.3",
@@ -30,5 +32,14 @@
 			"App\\": "app"
 		}
 	},
-	"minimum-stability": "stable"
+	"minimum-stability": "stable",
+	"config": {
+		"allow-plugins": {
+			"symfony/thanks": true
+		}
+	},
+	"scripts": {
+		"stan": "php ./vendor/bin/phpstan analyse ./app --level 8 --configuration phpstan.neon",
+		"stan-baseline": "php ./vendor/bin/phpstan analyse ./app --level 8 --configuration phpstan.neon --generate-baseline"
+	}
 }
