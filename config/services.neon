@@ -1,2 +1,17 @@
 services:
 	- App\Router\RouterFactory::createRouter
+	- App\Commands\EncryptionCommand
+	- App\Commands\DecryptionCommand
+	- App\Model\Cryptography(%cypherMethod%, %iv%)
+	- Symfony\Component\Console\Helper\QuestionHelper
+
+extensions:
+	console: Contributte\Console\DI\ConsoleExtension(%consoleMode%)
+
+console:
+	name: Encryptor
+	version: '1.0'
+	catchExceptions: true
+	autoExit: false
+	url: https://example.com
+	lazy: false

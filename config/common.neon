@@ -1,4 +1,6 @@
 parameters:
+    cypherMethod: 'AES-256-CBC'
+    iv: 'NDvQkG56aY643qQI257g'
 
 
 application:
